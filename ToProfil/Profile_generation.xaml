@@ -1,0 +1,199 @@
+﻿<Page x:Class="ToProfil.Profile_generation"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ToProfil"
+       xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+         Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      FontFamily="Montserrat"
+      mc:Ignorable="d" 
+      Title="Profile Generation"
+      d:DesignHeight="732" d:DesignWidth="1350"
+      >
+    <Grid x:Name="backg" Cursor="Arrow" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="335*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="377*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
+                <GradientStop Color="#FFF5F7FB" Offset="1"/>
+                <GradientStop Color="White"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Rectangle x:Name="cote" Fill="#FF333366" HorizontalAlignment="Left" Width="125" Margin="-6,0,0,0" Grid.RowSpan="3">
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.09"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <ToggleButton
+             x:Name="Mode_Switch" Click="Mode_Switch_Click"
+             Style="{StaticResource MaterialDesignSwitchToggleButton}"
+            ToolTip="Mode Sombre" Margin="14.5,574.173,110.508,13.827" Background="#FFC02739"
+            IsChecked="True" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" d:LayoutRounding="Auto" Cursor="Hand" Grid.Row="2"
+        >
+            <materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+                <SolidColorBrush
+      Color="#FFF6F8FB" />
+            </materialDesign:ToggleButtonAssist.SwitchTrackOnBackground>
+            <materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+                <SolidColorBrush
+      Color="#FFC02739" />
+            </materialDesign:ToggleButtonAssist.SwitchTrackOffBackground>
+            <ToggleButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="360.343"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ToggleButton.RenderTransform>
+        </ToggleButton>
+
+        <Button x:Name="Profile"  Click="Profile_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+            HorizontalAlignment="Left"  Margin="94.667,65.5,0,0" VerticalAlignment="Top" Height="48" Width="48"
+            ToolTip="Retour vers l'outil de dessin" Background="White" BorderBrush="{x:Null}" Grid.Row="2">
+            <Image x:Name="o_p" Source="ret2.png" Height="28" Width="28" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+        </Button>
+        <Button x:Name="Menu"  Click="Menu_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+            HorizontalAlignment="Left"  Margin="91.165,443.5,0,0" VerticalAlignment="Top" Height="55" Width="55"
+            ToolTip="Menu" Background="#FFC02739" BorderBrush="{x:Null}" Grid.Row="2">
+            <Image x:Name="o_m"  Source="menu.png" Height="35.833" Width="35.833" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+        </Button>
+        <Button x:Name="Home"  Click="Home_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+            HorizontalAlignment="Left"  Margin="91.165,514.5,0,0" VerticalAlignment="Top" Height="55" Width="55"
+            ToolTip="Accueil" Background="#FFC02739" BorderBrush="{x:Null}" Grid.Row="2">
+            <Image x:Name="o_h"  Source="home2.png" Height="32" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Button>
+        <Button x:Name="zoom"  Click="Zoom_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Height="47" Width="47"
+                    ToolTip="Zoom" Background="#FF333366" BorderBrush="{x:Null}" Canvas.Top="208" Canvas.Left="10" Margin="95.667,202,0,0" Grid.Row="2">
+            <Image Source="zoom.png" Height="22" Width="24" />
+        </Button>
+        <TextBlock x:Name="pt" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,15,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" FontSize="36" Foreground="#FF333366" Text="Profil Topographique"/>
+        <TextBlock x:Name="dp" Grid.Column="1" HorizontalAlignment="Left" Height="32.5" Margin="10,514.5,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Différentes Pentes" VerticalAlignment="Top" Width="432" FontSize="20" Foreground="#FF333366"/>
+        <Canvas ScrollViewer.CanContentScroll="True" x:Name="graph_canvas" Grid.Column="1" HorizontalAlignment="Left" Height="454" Margin="0,60,0,0" Grid.Row="2" VerticalAlignment="Top" Width="1103"  >
+            <lvc:CartesianChart  Name="g" Height="427" Width="1077" DisableAnimations="True" ScrollBarFill="#7F1E1E1E" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" ScrollMode="XY"  MouseWheel="G_MouseWheel" Pan="Xy" Canvas.Left="16">
+
+            </lvc:CartesianChart>
+        </Canvas>
+        <ScrollViewer x:Name="scr" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"  Grid.Column="1" HorizontalAlignment="Left" Height="80" Grid.Row="2" VerticalAlignment="Top" Width="1099" Margin="2,545,0,0" Foreground="Black">
+
+            <Canvas ScrollViewer.CanContentScroll="True" x:Name="pentes_canvas"  Height="85" Width="1099" Background="#FFFFF3F8"/>
+
+        </ScrollViewer>
+
+        <Grid x:Name="menu_rec" Grid.RowSpan="3" Visibility="Hidden">
+            <Rectangle x:Name="rect"  Fill="#FF333366" HorizontalAlignment="Left" Width="249" Margin="-30,0,0,0" StrokeDashCap="Round"/>
+            <StackPanel Orientation="Vertical">
+                <Button
+                x:Name="Retour" Click="Retour_Click"
+                Style="{StaticResource MaterialDesignRaisedLightButton}" 
+                ToolTip="Retour vers le plan de travail" Height="90" Background="{x:Null}" BorderBrush="{x:Null}" >
+                    <DockPanel LastChildFill="True" Width="188.742" Height="70.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Image DockPanel.Dock="Left" Source="ret.png" RenderTransformOrigin="0.5,0.5" Width="78.665" Margin="0,22" HorizontalAlignment="Center" >
+                            <Image.Effect>
+                                <DropShadowEffect Opacity="0.25" ShadowDepth="2"/>
+                            </Image.Effect>
+                        </Image>
+                        <TextBlock HorizontalAlignment="Right" Height="18.681" Width="104.393" FontWeight="Bold" ><Run Text="Retour"/></TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button
+                x:Name="Nouv" Click="Nouv_Click"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                ToolTip="Créer un nouveau projet" Height="90"  Background="{x:Null}" BorderBrush="{x:Null}" >
+                    <DockPanel LastChildFill="True" Width="188.742" Height="70.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Image DockPanel.Dock="Left" Source="nouv.png" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Width="83.5" Height="53" Margin="0,8.75" >
+                            <Image.Effect>
+                                <DropShadowEffect Opacity="0.25" ShadowDepth="2"/>
+                            </Image.Effect>
+                        </Image>
+                        <TextBlock HorizontalAlignment="Right" Height="18.681" Width="104.393" FontWeight="Bold" ><Run Text="Nouveau"/></TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button
+                x:Name="Ouvrir" Click="Ouvrir_Click"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                ToolTip="Ouvrir un projet existant" Height="90"  Background="{x:Null}" BorderBrush="{x:Null}" >
+                    <DockPanel LastChildFill="True" Width="188.742" Height="70.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Image DockPanel.Dock="Left" Source="ouvri.png" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Width="84.176" Height="43.667" Margin="0,13" >
+                            <Image.Effect>
+                                <DropShadowEffect Opacity="0.25" ShadowDepth="2"/>
+                            </Image.Effect>
+                        </Image>
+                        <TextBlock HorizontalAlignment="Right" Height="18.681" Width="104.393" FontWeight="Bold" Text="Ouvrir" />
+                    </DockPanel>
+                </Button>
+                <Button
+                x:Name="Sauvegarde" Click="Sauvegarde_Click"
+                Style="{StaticResource MaterialDesignRaisedLightButton}" 
+                ToolTip="Sauvegarder votre projet courant" Height="90" Background="{x:Null}" BorderBrush="{x:Null}" >
+                    <DockPanel LastChildFill="True" Width="188.742" Height="70.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Image DockPanel.Dock="Left" Source="enreg.png" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Width="83.683" Height="45" Margin="0,12.75" >
+                            <Image.Effect>
+                                <DropShadowEffect Opacity="0.25" ShadowDepth="2"/>
+                            </Image.Effect>
+                        </Image>
+                        <TextBlock HorizontalAlignment="Right" Height="18.681" Width="104.393" FontWeight="Bold" ><Run Text="Sauvegarder"/><LineBreak/><Run/></TextBlock>
+                    </DockPanel>
+                </Button>
+                <Rectangle HorizontalAlignment="Left" Height="255.167"  Width="219"/>
+                <Button
+                x:Name="Aide" Click="Aide_Click"
+                Style="{StaticResource MaterialDesignRaisedLightButton}" 
+                ToolTip="Acceder à l'aide en ligne" Height="90" Background="{x:Null}" BorderBrush="{x:Null}" >
+                    <DockPanel LastChildFill="True" Width="188.742" Height="70.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Image DockPanel.Dock="Left" Source="help.png" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Width="83.683" Height="45" Margin="0,12.75" >
+                            <Image.Effect>
+                                <DropShadowEffect Opacity="0.25" ShadowDepth="2"/>
+                            </Image.Effect>
+                        </Image>
+                        <TextBlock HorizontalAlignment="Right" Height="18.681" Width="104.393" FontWeight="Bold" Text="Aide" />
+                    </DockPanel>
+                </Button>
+
+            </StackPanel>
+        </Grid>
+        <Rectangle x:Name="est_ouest" Grid.Column="1" HorizontalAlignment="Left" Height="22.5" Margin="10,14.5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="1093">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFA61829" Offset="0"/>
+                    <GradientStop Color="#FFA41123" Offset="1"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="13.5" Margin="15,18.5,0,0" Grid.Row="2" TextWrapping="Wrap" Text="EST" VerticalAlignment="Top" Width="39.5" Foreground="White"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="13.5" Margin="1061.499,18.5,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Ouest" VerticalAlignment="Top" Width="39.5" Foreground="White"/>
+        <Canvas x:Name="conf_canvas" Grid.Column="1" Margin="143,179.5,349,247.666" Grid.Row="2" Visibility="Hidden">
+            <Canvas.Effect>
+                <DropShadowEffect Opacity="0.25"/>
+            </Canvas.Effect>
+            <Rectangle x:Name="rect_fond" Fill="#FFF6F8FB" HorizontalAlignment="Left" Height="242.834" VerticalAlignment="Top" Width="639"/>
+            <Rectangle x:Name="rect_bord" Fill="#FF333366" Height="30.5" Width="639"/>
+            <Button x:Name="conf_close" Click="Conf_close_Click" Style="{StaticResource MaterialDesignOutlinedButton}"   ToolTip="Annuler" Canvas.Left="589.5" Height="30.5" Width="49.5" Background="#0C000000" BorderBrush="{x:Null}" Foreground="White">
+                <materialDesign:PackIcon Kind="WindowClose" Height="24.75" Width="33.25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Button x:Name="conf_oui" Click="Conf_oui_Click" Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="150" ToolTip="Sauvegarder le travail" materialDesign:RippleAssist.Feedback="#DD000000" Canvas.Left="126" Canvas.Top="160.5" Height="44" Content="Oui" FontSize="16" BorderBrush="{x:Null}">
+            </Button>
+            <Button x:Name="conf_non" Click="Conf_non_Click"  Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="150" ToolTip="Ne pas sauvegarder le travail " materialDesign:RippleAssist.Feedback="#DD000000" Canvas.Left="364.5" Canvas.Top="160.5" Height="44" Content="Non" FontSize="16" BorderBrush="{x:Null}"/>
+            <TextBlock x:Name="txt_conf" Height="39" Canvas.Left="120" TextWrapping="Wrap" Canvas.Top="99" Width="403.5" FontSize="20" Foreground="#FF333366" FontFamily="/ToProfil;component/Resources/Montserrat/#Montserrat SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                Voulez vous sauvegarder votre travail ?</TextBlock>
+        </Canvas>
+        <Slider x:Name="zoom_slider" ValueChanged="Zoom_slider_ValueChanged" Orientation="Vertical"  Minimum="0"  Style="{StaticResource MaterialDesignDiscreteSlider}" BorderBrush="{x:Null}" Foreground="#FF333366" SmallChange="1" Cursor="Hand" LargeChange="0.1" TickFrequency="0.1" Margin="142.667,154.75,0,365.25" Grid.Row="2" Visibility="Hidden" />
+
+    </Grid>
+
+</Page>

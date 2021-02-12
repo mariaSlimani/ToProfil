@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ToProfil | Aide</title>
+	<link rel="icon" type="image/png" href="img/logo_app.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<header>
+	
+	
+		<span style="font-size:30px;cursor:pointer" onclick="openNav()" class="bars"><i class="fa fa-bars" aria-hidden="true"></i></span>
+		<img src="img/toprofil_aide.png" alt="logo" width="200"  id="log">
+
+	
+		
+
+	
+	
+</header>
+<section class="contenu">
+
+<div id="myNav" class="navigate" >
+	
+	
+	
+	 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<div class="overlay-content">
+	<a href="#Page_titre" class="index"><span class="underline" style="text-decoration: underline; text-underline-position: under;"> Index : </span> </a> 
+	<a href="#Qu'est ce que ToProfil" class="index">1/Qu'est ce que ToProfil ?</a>
+	<button class="dropdown-btn">2/Comment Utiliser ToProfil ?
+    	 <i class="fa fa-caret-down"></i>
+  </button>
+	<div class="dropdown-container">
+		
+		<a href="#page_acceuil" class="index"><b>1/</b> <span class="underline" style="text-decoration: underline; text-underline-position: under;">Page d'acceuil</span></a>
+    <a href="#page_dessin" class="index"><b>2/</b> <span class="underline" style="text-decoration: underline; text-underline-position: under;">Présenation de la page de dessin</span></a>
+    <a href="#menu" class="index"><b>3/</b> <span class="underline" style="text-decoration: underline; text-underline-position: under;">Le menu :</span></a>
+    <a href="#import" class="index"><b>3-1-</b> L'importation</a>
+    <a href="#sauvegarde" class="index"><b>3-2-</b>  La sauvegarde</a>
+    <a href="#aide" class="index"><b>3-3-</b>  L'aide en ligne</a>
+    <a href="#dessin" class="index"><b>4/</b> <span class="underline" style="text-decoration: underline; text-underline-position: under;">Le dessin :</span></a>
+	
+				<a href="#dessin_courbe" class="index"><b>4-1-</b> Comment dessiner une courbe ?</a>
+				<a href="#dessin_segment" class="index"><b>4-2-</b>Comment dessiner un segment ?</a>
+				<a href="#pb_dessin" class="index"><b>4-3-</b>Problèmes de dessin</a>
+	
+			<a href="#intersection" class="index"><b>5/</b>  <span class="underline" style="text-decoration: underline; text-underline-position: under;">Comment voir les points d’intersection / interpolation :</span></a>
+		
+				<a href="#pt_intersect" class="index"><b>5-1-</b>Points d’intersection</a>
+				<a href="#pt_res" class="index"><b>5-2-</b>Points résultants de l’interpolation</a>
+		
+			<a href="#boite_outils" class="index"><b>6/</b> <span class="underline" style="text-decoration: underline; text-underline-position: under;">Boîte à outils :</span></a>
+		
+				<a href="#interact" class="index"><b>6-1-</b>  Outils inactifs</a>
+			
+			<a href="#gener_prof" class="index"><b>7/</b> <span class="underline" style="text-decoration: underline; text-underline-position: under;">Génération du profil topographique :</span></a>
+			<a href="#err_prof" class="index"><b>7-1-</b>  Problèmes de génération du profil</a>
+		</div>
+		<a href="mailto:toprofil.dev@gmail.com">Contactez-nous</a>
+  </div>
+		
+	
+			
+			
+		
+		
+
+			
+	
+
+	
+
+</div>
+<nav id="navhide" style="width: 400px;"> 
+
+</nav>
+
+	<button onclick="topFunction()" id="myBtn" title="aller en haut"><i class="fa fa-arrow-up fa-lg" ></i></button>
+	<article class="article">	
+	
+	<p><span id="welcome"> Bienvenu à la page d'aide en ligne de ToProfil</span></p>
+	<h4 class="page" id="Page_titre"  >Aller directement vers :</h4>
+    <li><a href="#Utiliser ToProfil">Comment Utiliser ToProfil ?</a></li>
+	<li><a href="mailto:toprofil.dev@gmail.com">Contactez-nous</a></li>
+
+	
+
+	<h1 id="Qu'est ce que ToProfil">1/ Qu'est ce que ToProfil ?</h1>
+	
+	<p>
+ToProfil est une application qui permet de générer des profils topographiques en se basant sur les méthodes utilisées en topographie.<br><br>
+		Elle est conçue de façon à permettre une utilisation intuitive et donc il n'est pas demandé d'être topographe pour générer un profil topographique !<br><br>
+		L'application vous permettra alors d'importer votre carte en courbes de niveau, de dessiner vos courbes et votre segment avec celle-ci en arrière-plan, et fera tous les calculs nécessaires de la façon la plus précise, pour permettre enfin de générer un profil avec toutes les pentes calculées.
+
+	</p>
+	
+	<h1 id="Utiliser ToProfil">2/ Comment utiliser ToProfil ?</h1>
+	<h2 id="page_acceuil">1-Page d'acceuil:</h2>
+	<figure > 
+		<img src="img/page_acc.png" alt="page d'acceuil" width="600" height="300" >
+		<figcaption align="center">Page d'acceuil</figcaption>
+	</figure>
+		<p>Sur cette page on peut :
+		<li><b>Choisir le mode d'affichage :</b> Pour le confort des yeux de l'utilisateur le mode sombre est disponible, cette option sera à votre portée à chaque inspant de l’utilisation, avec un petit commutateur situé en bas à gauche de chaque page.</li>
+		<li><b>Créer un nouveau projet :</b> en cliquant sur nouveau ou en utilisant le raccourci (Ctrl+N) : cela vous mènera sur une <a href="#page_dessin" > page de dessin </a>vierge.</li>
+		<li><b>ouvrir un ancien projet(que vous avez enregistré auparavant) :</b> Cela vous mènera vers l'état sauvegardé de votre travail. L'extension du fichier sauvegardé est .tpr . Vous pouvez utiliser le raccourci (Ctrl+O).
+											
+</li>
+	</p>
+
+	<h2 id="page_dessin">2-Présenation de la page de dessin</h2>
+	<figure >
+		<img src="img/presentation_fen_princ.png" alt="fenetre principale" width="600" height="300" >
+		<figcaption  align="center" >Page de dessin</figcaption>
+	</figure>
+
+	<h2 id="menu">3-Le menu</h2>
+	
+	
+		
+		<h3 id="import">3-1 L'importation: </h3>
+		<p>En cliquant là-dessus on vous donne le choix d'importer une carte en arrière-plan ou de garder un arrière-plan vide .<br></p>
+
+	<figure  >
+		<img src="img/import_menu.png"  alt="importation" width="350" height="300">
+ 
+	</figure>
+	<p>
+		Pour importer une image de carte en courbes de niveau à l’arrière-plan de votre page, cherchez l'image dans vos répertoires comme indiqué sur l'image.<br>
+		<figure >
+			 <img src="img/import_final.png" alt="importation" width="600" height="360" >
+		</figure>
+		Après avoir trouvé l'image en question, cliquez dessus puis sélectionnez "ouvrir".<br><br>
+		- Vous pouvez aussi glissez l'image directement sur le plan de travail comme le montre ce gif : 
+		<figure>
+		<img src="gifs/drag_and_drop.gif" width="600" height="300">
+	</figure>
+	</p>
+	<h3 id="sauvegarde">3-2 La sauvegarde: </h3>
+	<p>Pour laquelle il faudra tout simplement indiquer l'emplacement ou vous souhaiteriez enregistrer votre travail, il sera sous forme de fichier. tpr que vous pourrez nommer à votre guise.</p>
+	<figure >
+		<img src="img/sauvegarde.png" alt="sauvegarde" width="600" height="360">
+	</figure>
+	<p>-Le raccourci clavier de la sauvegarde est le (Ctrl+S).<br>
+		<li id="remarque">
+			 L'application est associée par défaut aux fichiers dont l'extension est .tpr afin que vous puissiez les ouvrir depuis leur emplacement avec un double clic . 
+		</li>
+</p>
+
+	<h3 id="aide">3-3 L'aide en ligne :</h3>
+	<p>
+		Pour accéder à la page d’aide de ToProfil cliquez sur l'icône : <img src="img/help.png" alt="incone d'aide" width="80" id="hel">
+	</p>
+
+ 	<h2 id="dessin">4-Le dessin:</h2>
+ 	<p>Que ce soit sur un plan de travail sans fond (Carte non importée) ou avec il faudra introduire les informations nécessaires : l'échelle - l'équidispance - l’altitude minimale et maximale ; pour cela il faudra cliquer sur la flèche en haut de la page comme le montre cette illustration.
+	<br>
+ 		<figure >
+ 		<img src="img/fleche2.png" alt="fleche info" width="600" height="300"  ><br><br>
+ 	</figure>
+ 		La fenêtre suivante apparaît :<br>
+ 		<figure >
+ 		<img src="img/info.png" alt="fentere info" width="500" height="200"><br><br>
+ 	</figure><br>
+ 		Pour un champs vide ou erroné le champs est souligné en rouge :<br>
+
+ 		<figure  style="display:inline-block;">
+					<img src="img/errone.png" width="300" height="200">	<figcaption id="errone"  align="center">erroné</figcaption>
+				</figure>
+				<figure  style="display:inline-block;">
+					<img src="img/vide.png" width="300" height="200"><figcaption id="vide"  align="center">vide</figcaption>
+				</figure><br>
+ 	
+ 	
+ 		
+ 		
+ 	
+ 		<li id="remarque">Le champ est considéré erroné si l’information entré est illogique comme une altitude maximale inférieur à une altitude minimale, il faudra corriger l’erreur pour pouvoir continuer.
+		</li>
+
+
+</p>
+	<h3 id="dessin_courbe">4-1 Comment dessiner une courbe ?</h3>
+	<p>
+		<img src="img/dessin_crb.png" alt="icon de l'outil de courbe" width="150" height="100" id="dess_crb"><br>
+		Pour dessiner une courbe l’outil dessin de courbe doit être sélectionné, soit en cliquant sur l'icône de l’outil (montré sur la photo) ou en utilisant le raccourci clavier (Ctrl+D), pour arrêter le dessin il est possible de désélectionner l’outil ou de cliquer sur un autre outil tout simplement, la fermeture de la courbe en repassant sur son premier point, ou le clic droit arrêtent eux aussi le dessin.<br><br><br><br>
+		
+	A la fin du dessin de la courbe, l'application vous force à introduire l’altitude de cette dernière ; le champ sera souligné en rouge si l’altitude entrée est erronée (Ne correspond pas aux paramètres de la carte).<br>
+	<figure >
+					<img src="gifs/dsn_courbe.gif" width="600" height="300">
+				</figure>
+	Le champs qui apparaît à la fin du dessin:
+
+	<figure >
+		<img src="img/alt.png" alt="altitude" width="300" ><figcaption id="alti"  >Champs pour entrer l'altitude de la courbe</figcaption>
+	</figure><br><br> 
+	<li id="remarque">Une courbe avec altitude erronée est affichée en rouge foncé (rgb :181, 2, 71) par l’application, tant qu’elle n’est pas corrigée, ceci indique à l’utilisateur les courbes à modifier.</li><br><br>
+	- Le dessin des courbes étant une étape nécessitant beaucoup de précision, ToProfil met une <a href="#boite_outils">boite à outil</a> à la disposition de l’utilisateur.<br>
+	
+
+	</p>
+	<h3 id="dessin_segment">4-2 Comment dessiner un segment ?</h3>
+	<p>
+		<img src="img/dessin_seg.png" alt="outil dessin segment" width="150" id="dess_seg">
+		Pour dessiner un segment l’outil dessin de segment doit être sélectionné soit en cliquant sur l'icône de l’outil (montré sur la photo) ou en utilisant le raccourci clavier (Ctrl+L), pour arrêter le dessin il est possible de désélectionner l’outil ou de cliquer sur un autre outil tout simplement. <br><br><br>
+		
+		Il suffira juste de dessiner le segment dans le sens du profil que vous voulez observer, l’ordre du dessin des point définit le profil généré.<br><br>
+		<figure >
+					<img src="gifs/dsn_seg.gif" width="600" height="300">
+				</figure>
+		- Vous pouvez utiliser la <a href="#boite_outils">boite à outil</a>  pour quelques fonctionnalités de dessin.
+
+
+	</p>
+	<h4 id="pb_dessin">4-3 Problèmes de dessin :</h4>
+	<p>
+		ToProfil indique les problèmes de dessin qui empêchent la génération du profil, il y en a  deux :
+
+	</p>
+	<h5 id="courbeitself"><U>1/Intersection d’une courbe avec elle même :</U></h5>
+	<figure >
+		<img src="img/courbeitself.png" alt="Intersection courbe avec elle même" width="250"> 
+		<figcaption  align="center" class="pb_des">
+			 Le point qui cause problème est affiché en rose foncé et il suffit de passer la souris dessus pour voir le type du problème. 
+		</figcaption>
+	</figure>
+	<h5 id="courbecourbe"><U>2/Intersection entre  courbes  :</U></h5>
+	<figure >
+		<img src="img/courbecourbe.png" alt="Intersection entre deux courbes" width="250">
+		<figcaption  align="center" class="pb_des" >
+			Le point qui cause problème est affiché en rose clair et il suffit de passer la souris dessus pour voir le type du problème. 
+
+		</figcaption>
+	</figure>
+	<h3 id="intersection">5-Comment voir les points d’intersection/interpolation :</h3>
+	<p>
+		<img src="img/intersect.png" alt="afficher les points d'Intersection" width="150" id="int"><br>
+		Afin que l’utilisateur ait une première idée sur le profil qui sera généré, ToProfil lui offre la possibilité de voir l’altitude de ses points en cliquant sur le bouton en question, après avoir dessiné le segment (ou en utilisant le raccourci clavier Ctrl+I). <br>
+		
+		<h4 id="pt_intersect"><U>5-1 Points d’intersection :</U></h4>
+		Ce sont les points d’intersection du segment avec les courbes de niveau, chaque point aura alors l’altitude de sa courbe, pour la voir il suffit de passer la souris sur le point en question.
+		
+<br><br>
+		- Dans le cas où une/les extrémité(s) ne sont pas des points d’intersection, l’application calcule leur altitude en réalisant une interpolation topographique.
+<br>
+		<h4 id="pt_res"><U>5-2 Points résultants de l’interpolation :</U></h4>
+		De la même façon pour voir l’altitude d’un point déduit par interpolation il vous suffit de passer la souris sur ce point.<br>
+		<figure >
+		<img src="img/interpolation.png" alt="gif montrant passage de la souris" width="250"><br>
+	</figure>
+
+
+	</p>
+	<h3 id="boite_outils">6-Boîte à outils:</h3>
+	<p>
+		<img src="img/outils.png" alt="boite a outils" width="150" id="out"><br>
+		Afin d’obtenir des dessins précis, vous aurez surement besoin des fonctionnalités proposées dans la boîte à outils, pour y accéder cliquez sur son icône :<br><br><br><br>
+		
+		Dans cette boîte à outils vous trouverez:
+		<p>
+			<img  src="img/ancrage.png" alt="biote a outils" height="40" class="outils" style="margin-right:10px;">
+				1- Outil ajout de points d’ancrage à une courbe: si vous voulez ajouter un point d’ancrage à une courbe, commencez par la sélectionner, cliquez sur l’outil et choisissez l’emplacement du point.<br>
+				-Il faudra désélectionner l’outil pour stopper son utilisation.<br>
+				<b>Son raccourci:</b> Ctrl+A<br>
+				<figure >
+					<img src="gifs/ajout_points_d’ancrage.gif" width="600" height="300">
+				</figure>
+				
+				<img  src="img/effacer.png" alt="biote a outils" height="40" class="outils" style="margin-right:10px;">
+				2- Outil effacer: pour effacer un élément dessiné (courbe/segment/point d'ancrage) sélectionnez le et cliquez sur l’outil.<br><br>
+ 				<b>Son raccourci:</b> Suppr/Delete<br>
+ 				<figure >
+					<img src="gifs/effacer.gif" width="600" height="300">
+				</figure>
+ 				
+ 				<img  src="img/copier.png" alt="biote a outils" height="40" class="outils" style="margin-right:10px;">
+ 				3- Outil copier: ToProfil ne permet pas de copier le segment puisque qu’il est unique, voilà pourquoi la fonctionnalité sera inactive même s’il est sélectionné.<br>
+				-Pour couper une courbe : sélectionnez-la et cliquez sur l’outil.<br>
+				<b>Son raccourci:</b> Ctrl+C<br>
+				<figure >
+					<img src="gifs/copier.gif" width="600" height="300">
+				</figure>
+				
+				<img  src="img/couper.png" alt="biote a outils" height="40" class="outils" style="margin-right:10px;">
+				4- Outil couper: Comme l’outil a pour effet d’effacer et d’en garder une copie, il n’est actif que lors de la sélection d’une courbe.<br>
+				-Pour couper une courbe: sélectionnez la et cliquez sur l’outil .<br>
+				<b>Son raccourci:</b>  Ctrl+X<br>
+				<figure >
+					<img src="gifs/couper.gif" width="600" height="300">
+				</figure>
+				
+				<img  src="img/coller.png" alt="biote a outils" height="40" class="outils" style="margin-right:10px;">
+				5- Outil coller: qui n’est actif que si vous aviez copié/coupé une courbe auparavant.<br>
+				- Pour coller une courbe : sélectionnez-la et cliquez sur l’outil.<br><br>
+				<b>Son raccourci:</b>  Ctrl+V<br>
+				<figure  >
+					<img src="gifs/copier.gif" width="600" height="300">
+				</figure>
+				<figure  >
+					<img src="gifs/couper.gif" width="600" height="300">
+				</figure><br>
+				
+				<img  src="img/zoom.png" alt="biote a outils" height="40" class="outils" style="margin-right:10px;">
+				6- Le zoom : pour zoomer/ dézoomer sélectionnez l’outil, un slider apparaît il vous permettra de choisir le degré de zoom. Pour vous déplacer sur l’écran : utilisez les deux scroller verticale et horizontale. <br>
+				- Une autre option serait d’utiliser le raccourci (Ctrl+ (+ /-) ou Ctrl+Scroll).<br>
+				<figure >
+					<img src="gifs/zoom1.gif" width="600" height="300">
+				</figure>
+				
+				<img  src="img/undo.png" alt="biote a outils" height="40" class="outils" style="margin-right:10px;">
+				7- Undo: retour d’un pas en arrière, l’outil est actif dans le cas où au moins une modification a été effectuée.<br><br>
+				<b>Son raccourci: </b> Ctrl+Z.<br><br><br>
+				
+				<img  src="img/redo.png" alt="biote a outils" height="40" class="outils" style="margin-right:10px;">
+				8- Redo: Annule le retour arrière (Undo), l’outil est actif dans le cas où le Undo a été appelé au moins une fois.<br><br>
+				<b>Son raccourci:</b> Ctrl+Y.<br>
+				<figure >
+					<img src="gifs/undo_redo.gif" width="600" height="300">
+				</figure>
+				
+		</p>
+
+			
+
+	</p>
+	
+	<h3 id="interact">6-1 Outils inactifs :</h3>
+	<p class="outils_paraph">
+		<img src="img/outils_masq.png" alt="boite a outils masquée" height="260" class="outils_masq"><br><br>
+		- Plusieurs fonctionnalités dont : L’ajout d’un point d’ancrage, effacer, copier et couper ne seront fonctionnelles que si une courbe est sélectionnée.<br><br>
+			- Comme le montre l’image les outils non fonctionnels apparaissent plus clairs.<br><br>
+		- La fonctionnalité de coller ne serait actif que si le presse papier n’est pas vide.<br><br>
+		- Le retour en arrière ne serait fonctionnel que s’il y’a un état auquel on peut revenir.<br><br>
+		- Et l’avance en avant ne l’est que s’il y’a eu au moins un retour arrière.<br><br><br><br><br>
+
+
+
+		
+	</p>
+	
+
+
+	<h2 id="gener_prof">7-Génération du profil topographique :</h2>
+	<p>
+		<img src="img/profile.png" alt="aide" width="150" id="pro"><br><br>
+		Pour afficher le profil topographique de la surface désigné par votre segment il vous suffira de cliquer sur l'icône de génération du profil :<br><br><br><br><br><br>
+		
+
+		Voici un exemple de ce qui pourrait apparaître si aucun problème de dessin n’a été repéré :
+		<figure>
+		<img src="img/profil.png" alt="profile" height="350" width="600"><br>
+	</figure>
+		En dessous du graphe les différentes pentes sont affichées, et comme dit dans la rubrique
+		<a href="#dessin_segment">comment dessiner un segment</a>, c’est le sens de dessin du segment qui détermine le sens d’observation du graphe résultant et des calculs de pentes résultantes.
+ 		<br><br>
+		- Si toutes les pentes ne sont pas visibles, il suffit d’utiliser le scroller au niveau de l’affichage de ces dernières.<br><br>
+		- Pour zoomer sur le profil généré, utilisez le bouton zoom et utilisez le slider qui apparait, ou tout simplement le raccourci zoom (Ctrl+ (+/-) ) ou le scroll de votre souris (Ctrl + Scroll).<br>
+		<figure >
+					<img src="gifs/zoom2.gif" width="600" height="300">
+				</figure>
+
+
+
+
+
+	</p>
+	<h3 id="err_prof">7-1 Ce qui peut empêcher la génération du profil :</h3>
+	<p>
+		ToProfil ne génère pas de profil avec des données erronées, dans ces cas, l’application indique à l’utilisateur les erreurs commises et l’utilisateur se doit d’apporter les modifications nécessaires indiquées par différents messages au moment où il tente de générer le profil. Voici les types de messages qui peuvent apparaitre :<br>
+		<h4><U>1/ Intersection d’une ou plusieur courbe(s) entre elles :</U></h4>
+		<figure >
+		<img src="img/err_courbecourbe.png" alt="erreur intersection entre les courbes"  width="600">
+	</figure>
+		<h4><U>2/ Intersection d’une ou plusieurs courbe(s) avec elle(s) même :</U></h4>
+		<figure >
+		<img src="img/err-courbeitself.png" alt="erreur intersection d'une courbe avec elle meme" width="600" >
+	</figure>
+		<h4><U>3/ La(les) altitude(s) d’une / quelques courbe(s) ne respectent pas les paramètres de la carte :</U></h4>
+		<figure >
+		<img src="img/err_param.png" alt="erreur altitude courbe" width="600">
+	</figure>
+		<h4><U>4/ Vous n'avez pas rempli un ou des paramètres de la carte :</U></h4>
+		<figure style="display: inline-block;">
+		<img src="img/vide.png" alt="paramètres vides " width="250">
+	</figure>
+	<figure style="display: inline-block;">
+		<img src="img/comp_vide.png" alt="paramètres vides " width="250">
+	</figure>
+
+	</p>
+	
+</article>
+
+</section>
+<footer>
+	<p>
+		Copyright © ToProfil 2019-2020 .Tout droits réservés   <br>
+		Contactez-nous :
+	<a href="mailto:toprofil.dev@gmail.com">toprofil.dev@gmail.com</a>                                                    
+	</p>
+	
+</footer>
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+
+function openNav() {
+  document.getElementById("myNav").style.width = "20%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+
+
+</body>
+</html>
